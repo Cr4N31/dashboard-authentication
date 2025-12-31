@@ -88,7 +88,7 @@ dashboard-authentication/
 
 ---
 
-## 🚧 Planned Updates
+## Planned Updates
 
 * Dashboard widgets (stats, projects, activity feed)
 * Better layout styling
@@ -101,7 +101,7 @@ dashboard-authentication/
 
 ##  Status
 
-**Work in Progress 🚧**
+**Work in Progress **
 This repository represents an **ongoing learning and building process**. The final product will include a fully functional dashboard experience.
 
 ---
