@@ -4,11 +4,11 @@ This project is a **React-based dashboard application** focused on building a **
 
 The goal of this project is to **master core React concepts** such as state lifting, component composition, conditional rendering, and layout architecture before introducing advanced features.
 
-⚠️ **Note:** This project is **not complete yet**. The authentication flow works, but the dashboard is still under active development. Upcoming updates will include full dashboard features, widgets, and improved UI/UX.
+**Note:** This project is **not complete yet**. The authentication flow works, but the dashboard is still under active development. Upcoming updates will include full dashboard features, widgets, and improved UI/UX.
 
 ---
 
-## ✨ Features Implemented So Far
+##  Features Implemented So Far
 
 * Login & Register UI (state-based, no backend yet)
 * Authentication layout separation
