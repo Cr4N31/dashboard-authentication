@@ -8,7 +8,7 @@ function StatsWidget() {
   ];
 
   return (
-    <WidgetCard title="Overview">
+    <WidgetCard title="Overview" data-aos="fade-up">
       <div className="flex flex-col gap-4">
         {stats.map((stat) => {
           // Calculate width percentage

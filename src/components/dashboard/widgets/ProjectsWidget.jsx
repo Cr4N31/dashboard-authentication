@@ -9,12 +9,13 @@ function ProjectsWidget() {
 
   const statusColor = (status) => {
     if (status === "Completed") return "bg-green-500 text-white";
+
     if (status === "In Progress") return "bg-yellow-400 text-black";
     return "bg-gray-300 text-black";
   };
 
   return (
-    <WidgetCard title="Projects">
+    <WidgetCard title="Projects" data-aos="fade-up">
       <ul className="flex flex-col gap-3">
         {projects.map((project) => (
           <li key={project.id} className="flex items-center justify-between">

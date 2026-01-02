@@ -8,7 +8,7 @@ function ActivityWidget() {
   ];
 
   return (
-    <WidgetCard title="Recent Activity">
+    <WidgetCard title="Recent Activity" data-aos="fade-up">
       <ul className="flex flex-col gap-2">
         {activities.map((activity) => (
           <li key={activity.id} className="text-black text-sm">

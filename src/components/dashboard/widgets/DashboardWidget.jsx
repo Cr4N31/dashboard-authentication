@@ -4,10 +4,10 @@ import ActivityWidget from "./ActivityWidget";
 
 function DashboardWidgets() {
   return (
-    <section className="dashboard-widgets grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-      <StatsWidget />
-      <ProjectsWidget />
-      <ActivityWidget />
+    <section className="dashboard-widgets">
+      <StatsWidget data-aos="fade-up" />
+      <ProjectsWidget  data-aos="fade-up"/>
+      <ActivityWidget data-aos="fade-up"/>
     </section>
   );
 }

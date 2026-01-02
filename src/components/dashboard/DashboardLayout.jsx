@@ -8,7 +8,7 @@ function DashboardLayout({ user, setUser, notifications }) {
   const [sidebarOpen, setSidebarOpen] = useState(false); // mobile sidebar
 
   return (
-    <div className="flex h-screen bg-gray-100">
+    <div className="flex h-screen bg-gray-100" >
       {/* Sidebar */}
       <SideBar
         currentPage={currentPage}
@@ -33,16 +33,22 @@ function DashboardLayout({ user, setUser, notifications }) {
           notifications={notifications}
           toggleSidebar={() => setSidebarOpen(!sidebarOpen)}
         />
+        <div data-aos="fade-up">
+            <div className='font-bold text-3xl p-4 mx-4 mt-8'>
+                <p>Welcome, {user?.email || user?.username}!</p>
+            </div>
 
-        <div className="p-6 mt-6">
-          {currentPage === "Dashboard" && <DashboardWidgets />}
-          {currentPage === "Analytics / Overview" && (
-            <h3 className="text-2xl font-semibold">Analytics Page</h3>
-          )}
-          {currentPage === "Projects" && (
-            <h3 className="text-2xl font-semibold">Projects Page</h3>
-          )}
+            <div className="p-6 mt-2">
+            {currentPage === "Dashboard" && <DashboardWidgets />}
+            {currentPage === "Analytics / Overview" && (
+                <h3 className="text-2xl font-semibold">Analytics Page</h3>
+            )}
+            {currentPage === "Projects" && (
+                <h3 className="text-2xl font-semibold">Projects Page</h3>
+            )}
+            </div>
         </div>
+
       </main>
     </div>
   );
