@@ -11,7 +11,6 @@ function StatsWidget() {
     <WidgetCard title="Overview" data-aos="fade-up">
       <div className="flex flex-col gap-4">
         {stats.map((stat) => {
-          // Calculate width percentage
           const widthPercent = Math.min((stat.value / stat.max) * 100, 100);
           return (
             <div key={stat.label}>

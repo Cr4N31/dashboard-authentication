@@ -8,6 +8,7 @@ function AuthLayout({ setUser }) {
 
   function handleAuthSubmit(data) {
     console.log(isLogin ? "Login data:" : "Register data:", data);
+    localStorage.setItem("user", JSON.stringify(data))
     setUser(data);
   }
 

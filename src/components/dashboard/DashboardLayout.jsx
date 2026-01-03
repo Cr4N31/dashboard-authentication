@@ -2,10 +2,39 @@ import { useState } from 'react';
 import SideBar from "./SideBar";
 import Topbar from './Topbar';
 import DashboardWidgets from './widgets/DashboardWidget';
+import Analytics from './pages/analytics';  
+import Projects from './pages/Projects';
 
 function DashboardLayout({ user, setUser, notifications }) {
   const [currentPage, setCurrentPage] = useState("Dashboard");
   const [sidebarOpen, setSidebarOpen] = useState(false); // mobile sidebar
+  const [projects, setProjects] = useState([
+      {
+        id: 1,
+        name: "Dashboard UI",
+        status: "In Progress",
+        createdAt: "2026-01-01",
+      },
+      {
+        id: 2,
+        name: "Auth System",
+        status: "Completed",
+        createdAt: "2025-12-20",
+      },
+  ]);
+
+   const addProject = () => {
+    const newProject = {
+      id: Date.now(),
+      name: `New Project ${projects.length + 1}`,
+      status: "Pending",
+      createdAt: new Date().toLocaleDateString(),
+    };
+
+    setProjects((prev) => [...prev, newProject]);
+  };
+
+  
 
   return (
     <div className="flex h-screen bg-gray-100" >
@@ -32,6 +61,7 @@ function DashboardLayout({ user, setUser, notifications }) {
           currentPage={currentPage}
           notifications={notifications}
           toggleSidebar={() => setSidebarOpen(!sidebarOpen)}
+          onAddProject={addProject}
         />
         <div data-aos="fade-up">
             <div className='font-bold text-3xl p-4 mx-4 mt-8'>
@@ -40,12 +70,8 @@ function DashboardLayout({ user, setUser, notifications }) {
 
             <div className="p-6 mt-2">
             {currentPage === "Dashboard" && <DashboardWidgets />}
-            {currentPage === "Analytics / Overview" && (
-                <h3 className="text-2xl font-semibold">Analytics Page</h3>
-            )}
-            {currentPage === "Projects" && (
-                <h3 className="text-2xl font-semibold">Projects Page</h3>
-            )}
+            {currentPage === "Analytics / Overview" && <Analytics/>}
+            {currentPage === "Projects" && <Projects projects={projects}/>}
             </div>
         </div>
 

@@ -4,7 +4,9 @@ import AOS from 'aos';
 import AuthLayout from "./components/auth/AuthLayout"
 import DashboardLayout from "./components/dashboard/DashboardLayout"
 function App() {
+  const [user, setUser] = useState(null)
 
+  
   useEffect(() => {
     AOS.init({
       duration: 800,       // animation duration
@@ -13,7 +15,13 @@ function App() {
     });
   }, []);
 
-  const [user, setUser] = useState(null)
+    useEffect(() => {
+      const savedUser = localStorage.getItem("user");
+      if (savedUser) setUser(JSON.parse(savedUser));
+    }, []);
+
+
+
 
   return(
     <div>

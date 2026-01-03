@@ -5,6 +5,13 @@ function SideBar({ currentPage, setCurrentPage, setUser, sidebarOpen, closeSideb
     { id: 3, item: "Projects" },
   ];
 
+  
+  function handleLogout() {
+    localStorage.removeItem("user");
+    setUser(null);
+  }
+
+
   return (
     <nav
       className={`
@@ -47,11 +54,11 @@ function SideBar({ currentPage, setCurrentPage, setUser, sidebarOpen, closeSideb
 
       {/* Bottom buttons */}
       <div className="mb-6 px-6 flex flex-col space-y-2">
-        <button className="w-full text-left px-6 py-3 rounded-lg text-black hover:bg-gray-100 font-medium">
+        <button className="w-full text-left px-6 py-3 rounded-lg text-black hover:bg-gray-400 font-medium">
           Settings
         </button>
         <button
-          onClick={() => setUser(null)}
+          onClick={handleLogout}
           className="w-full hover:text-red-600 transition-all ease text-left px-6 py-3 rounded-lg text-black hover:bg-gray-100 font-medium"
         >
           Logout

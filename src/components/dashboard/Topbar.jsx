@@ -2,7 +2,7 @@ import { useState } from 'react';
 import NotificationIcon from '../../assets/notifications-svgrepo-com.svg';
 import SearchIcon from '../../assets/search-svgrepo-com.svg'
 
-function Topbar({ currentPage, notifications = [], toggleSidebar }) {
+function Topbar({ currentPage, notifications = [], toggleSidebar, onAddProject }) {
   const [isTooltipVisible, setIsTooltipVisible] = useState(false);
 
   return (
@@ -36,10 +36,13 @@ function Topbar({ currentPage, notifications = [], toggleSidebar }) {
         </div>
 
         {/* Add button */}
-        <button className="hidden md:inline px-4 py-2 bg-black text-white font-bold rounded hover:bg-gray-800">
-          +
-        </button>
-
+       <button
+          onClick={onAddProject}
+          className="p-2 md:px-4 md:py-2 bg-black text-white font-bold rounded hover:bg-gray-800"
+        >
+          <span className="md:hidden text-xl">+</span>
+          <span className="hidden md:inline">+</span>
+      </button>
         {/* Notification icon with tooltip */}
         <div
           className="relative"
@@ -57,7 +60,7 @@ function Topbar({ currentPage, notifications = [], toggleSidebar }) {
 
           {/* Tooltip */}
           {isTooltipVisible && (
-            <div className="absolute -top-8 right-0 bg-black text-white text-xs px-2 py-1 rounded shadow-lg whitespace-nowrap">
+            <div className="absolute top-10 right-0 bg-black text-white text-xs px-2 py-1 rounded shadow-lg whitespace-nowrap">
               Notifications
             </div>
           )}
