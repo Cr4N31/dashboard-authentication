@@ -64,12 +64,15 @@ function DashboardLayout({ user, setUser, notifications }) {
           onAddProject={addProject}
         />
         <div data-aos="fade-up">
-            <div className='font-bold text-3xl p-4 mx-4 mt-8'>
+            <div className='font-bold text-2xl md:text-3xl p-4 md:p-2 ml-0 md:ml-4 mt-8'>
                 <p>Welcome, {user?.email || user?.username}!</p>
             </div>
 
-            <div className="p-6 mt-2">
-            {currentPage === "Dashboard" && <DashboardWidgets />}
+            <div className="p-2 md:p-6 mt-2">
+            {currentPage === "Dashboard" && (
+              <DashboardWidgets projects={projects} />
+            )}
+
             {currentPage === "Analytics / Overview" && <Analytics/>}
             {currentPage === "Projects" && <Projects projects={projects}/>}
             </div>
