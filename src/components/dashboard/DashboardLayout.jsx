@@ -2,7 +2,7 @@ import { useState } from 'react';
 import SideBar from "./SideBar";
 import Topbar from './Topbar';
 import DashboardWidgets from './widgets/DashboardWidget';
-import Analytics from './pages/analytics';  
+import Analytics from './pages/Analytics';  
 import Projects from './pages/Projects';
 
 function DashboardLayout({ user, setUser, notifications }) {
